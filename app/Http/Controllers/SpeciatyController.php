@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Specialty;
-use App\Models\branch;
+use App\Models\Branch;
 class SpeciatyController extends Controller
 {
     public function showAllSpecialties()
@@ -50,7 +50,7 @@ class SpeciatyController extends Controller
         $page = 'Speciaty Detail';
 
         $speciatyDetail = Specialty::find($id);
-        $branches = branch::where('specialty','=',$id)->get();
+        $branches = Branch::where('specialty','=',$id)->get();
 
 
         return view('main.show_detail', compact('page','speciatyDetail','branches'));
