@@ -26,7 +26,7 @@ class CourseController extends Controller
     public function createCourse(Request $request)
     {
         $request->validate([//validate data
-            'name'=> 'required|unique:Courses|max:50',
+            'name'=> 'required|unique:courses|max:50',
             'title'=>'required',
             'detail'=>'required',
             'br_lng'=>'required',
